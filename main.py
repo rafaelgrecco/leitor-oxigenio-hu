@@ -21,6 +21,12 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '.env/ieeeocr-fa4d9584e605.json'
 
 
 class ERROR_UPLOAD_DATABASE(Exception):
+    """Exceptions raised when the upload to mongodb failed
+
+    Returns:
+         Exception (_str_): returns a string explaning the exception
+    """
+
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
         self.datetime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
